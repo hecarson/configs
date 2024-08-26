@@ -20,11 +20,10 @@ setopt autocd
 # autoload -Uz promptinit
 # promptinit
 # prompt suse
-PS1="%{%B%F{red}%}%n@%m%{%b%F{white}%}:%{%F{yellow}%}%~ %{%F{white}%}> "
+PS1="%{%F{green}%}%D{%H:%M:%S} %{%B%F{red}%}%n@%m%{%b%F{white}%}:%{%F{yellow}%}%~ %{%F{white}%}> "
 PS2="> "
 
 export EDITOR=nvim
-export PATH=$PATH:/home/carson/.juliaup/bin
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'

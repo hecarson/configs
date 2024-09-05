@@ -14,5 +14,10 @@ end)
 
 -- LaTeX compile
 vim.keymap.set("n", "<leader>lc", function()
+    if vim.bo.filetype ~= "tex" then
+        print("Not in a TeX file!")
+        return
+    end
+    vim.cmd("w")
     vim.cmd("!pdflatex %")
 end)

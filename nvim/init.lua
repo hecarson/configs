@@ -31,4 +31,15 @@ require("lazy").setup({
 require("lsp")
 require("keymaps")
 
+-- Disable TS autoindent for TeX files
+vim.api.nvim_create_autocmd(
+    "FileType",
+    {
+        pattern = "tex",
+        callback = function()
+            vim.opt.indentexpr = ""
+        end,
+    }
+)
+
 vim.cmd("colorscheme kanagawa")

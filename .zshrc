@@ -25,9 +25,13 @@ PS2="> "
 
 export EDITOR=nvim
 
+# Enable ptrace, useful for attaching with GDB
+function enablept {
+    sudo -E --preserve-env=PATH capsh --caps="cap_setpcap,cap_setuid,cap_setgid+ep cap_sys_ptrace+eip" --user="$USER" --addamb="cap_sys_ptrace" --shell="/usr/bin/zsh" -- -c "$*"
+}
+
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias less='less -R' # -R for colors
 alias mainenv='. ~/main-env/bin/activate'
 alias deact='deactivate'
 alias pkgsize="pacman -Qi | grep -E '^(Name|Installed)' | awk '{gsub(/^Installed.*: /, \"\"); gsub(/Name.*: /, \"\");} {if (NR%2==1) printf \"%s \", \$0; else {gsub(\" \", \"\"); printf \"%s\n\", \$0;}}' | sort -h -k 2"

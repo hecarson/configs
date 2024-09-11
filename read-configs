@@ -1,0 +1,4 @@
+#!/bin/zsh
+dir=$(dirname $0)
+cp ~/.zshrc $dir/.zshrc
+cp -r ~/.config/nvim $dir

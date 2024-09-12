@@ -27,6 +27,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+function apply_colorscheme()
+    vim.cmd("colorscheme kanagawa")
+end
+
 require("lazy").setup({
     spec = { {import = "plugins"} },
     install = { colorscheme = {"kanagawa"} },
@@ -49,4 +53,4 @@ vim.api.nvim_create_autocmd(
     }
 )
 
-vim.cmd("colorscheme kanagawa")
+apply_colorscheme()

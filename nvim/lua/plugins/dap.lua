@@ -50,7 +50,7 @@ return {
             vim.keymap.set("n", "<leader>dt", dapui.toggle)
 
             -- For some reason, this fixes the weird black background of the DAP REPL icons
-            vim.cmd("colorscheme kanagawa")
+            apply_colorscheme()
         end,
     },
 

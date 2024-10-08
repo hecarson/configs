@@ -2,3 +2,4 @@
 dir=$(dirname $0)
 cp $dir/.zshrc ~/.zshrc
 cp -r $dir/nvim ~/.config
+cp $dir/toprc ~/.config/procps/toprc

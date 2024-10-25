@@ -1,4 +1,5 @@
--- This file is needed to ensure that plugins are set up in the correct order, specifically: mason, mason-lspconfig, nvim-lspconfig
+-- This file is needed to ensure that plugins are set up in the correct order.
+-- Order: mason, mason-lspconfig, nvim-lspconfig
 
 local lsp_zero = require('lsp-zero')
 

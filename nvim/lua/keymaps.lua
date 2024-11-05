@@ -1,5 +1,11 @@
 -- Explore
-vim.keymap.set("n", "<leader>e", vim.cmd.Ex)
+oil = require("oil")
+vim.keymap.set("n", "<leader>e", function() oil.open() end)
+oil.setup({
+    keymaps = {
+        ["<leader>e"] = "actions.close",
+    },
+})
 
 -- Copy/paste with system clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])

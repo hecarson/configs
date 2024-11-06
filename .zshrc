@@ -34,5 +34,6 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias mainenv='. ~/main-env/bin/activate'
 alias deact='deactivate'
-alias pkgsize="pacman -Qi | grep -E '^(Name|Installed)' | awk '{gsub(/^Installed.*: /, \"\"); gsub(/Name.*: /, \"\");} {if (NR%2==1) printf \"%s \", \$0; else {gsub(\" \", \"\"); printf \"%s\n\", \$0;}}' | sort -h -k 2"
+alias pkgsizes="pacman -Qi | grep -E '^(Name|Installed)' | awk '{gsub(/^Installed.*: /, \"\"); gsub(/Name.*: /, \"\");} {if (NR%2==1) printf \"%s \", \$0; else {gsub(\" \", \"\"); printf \"%s\n\", \$0;}}' | sort -h -k 2"
 alias genmirrorlist="reflector -c us -p https -l 10 -f 5 --verbose --save mirrorlist"
+alias pacconfigs="find / -name \"*.pacnew\" -o -name \".pacsave\" 2>& /dev/null"

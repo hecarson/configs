@@ -33,6 +33,8 @@ end)
 -- Faster exit from terminal mode
 vim.keymap.set("t", "<A-[>", "<C-\\><C-N>")
 
+
+
 -- Plugin keymaps
 
 local builtin = require("telescope.builtin")

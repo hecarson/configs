@@ -1,11 +1,7 @@
 -- Explore
 oil = require("oil")
 vim.keymap.set("n", "<leader>e", function() oil.open() end)
-oil.setup({
-    keymaps = {
-        ["<leader>e"] = "actions.close",
-    },
-})
+-- Keymap for closing is in plugins/oil.lua
 
 -- Copy/paste with system clipboard
 vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])

@@ -8,6 +8,8 @@ vim.opt.ignorecase = true
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+vim.lsp.log.set_level("OFF")
+
 
 
 -- https://github.com/folke/lazy.nvim

@@ -3,3 +3,4 @@ dir=$(dirname $0)
 cp ~/.zshrc $dir/.zshrc
 cp -r ~/.config/nvim $dir
 cp ~/.config/procps/toprc $dir/toprc
+cp ~/.gef.rc $dir/.gef.rc

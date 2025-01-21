@@ -37,6 +37,7 @@ alias deact='deactivate'
 alias pkgsizes="pacman -Qi | grep -E '^(Name|Installed)' | awk '{gsub(/^Installed.*: /, \"\"); gsub(/Name.*: /, \"\");} {if (NR%2==1) printf \"%s \", \$0; else {gsub(\" \", \"\"); printf \"%s\n\", \$0;}}' | sort -h -k 2"
 alias genmirrorlist="reflector -c us -p https -l 10 -f 5 --verbose --save mirrorlist"
 alias pacconfigs="find / -name \"*.pacnew\" -o -name \".pacsave\" 2>& /dev/null"
+alias lsfs="lsblk -o name,label,fstype,fsused,fsavail,fssize,uuid,mountpoint"
 
 # pnpm
 export PNPM_HOME="/home/carson/.local/share/pnpm"

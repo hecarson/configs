@@ -12,6 +12,11 @@ return {
                 args = { "-n", "--interpreter=dap", "--eval-command", "set print pretty on" },
             }
 
+            dap.adapters.javadebug = {
+                type = "executable",
+
+            }
+
             -- Configuration
             local c_cpp_config = {
                 {

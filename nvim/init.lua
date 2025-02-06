@@ -16,7 +16,7 @@ end
 
 require("lazy-config")
 
-require("lsp")
+require("lsp-config")
 require("keymaps")
 
 -- Disable TS autoindent for TeX files

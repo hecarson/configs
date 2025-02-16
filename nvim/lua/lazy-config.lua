@@ -1,4 +1,4 @@
--- https://github.com/LazyVim/starter/blob/main/lua/config/lazy.lua
+-- https://lazy.folke.io/installation
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

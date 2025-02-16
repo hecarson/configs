@@ -1,6 +1,8 @@
 #!/bin/zsh
 dir=$(dirname $0)
 cp $dir/.zshrc ~/.zshrc
+cp -r ~/.config/nvim ~/.config/nvim.old
+rm -r ~/.config/nvim
 cp -r $dir/nvim ~/.config
 cp $dir/toprc ~/.config/procps/toprc
 cp $dir/.gef.rc ~/.gef.rc

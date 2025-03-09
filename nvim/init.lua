@@ -21,6 +21,10 @@ require("lsp-config")
 require("dap-config")
 require("keymaps")
 
+apply_colorscheme()
+
+
+
 -- Disable TS autoindent for TeX files
 vim.api.nvim_create_autocmd(
     "FileType",
@@ -31,5 +35,3 @@ vim.api.nvim_create_autocmd(
         end,
     }
 )
-
-apply_colorscheme()

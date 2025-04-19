@@ -14,6 +14,9 @@ compinit
 
 
 bindkey "^?" backward-delete-char
+# Up and down arrow keys
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 setopt autocd
 

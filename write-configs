@@ -6,10 +6,12 @@ cp $dir/.zshrc ~/.zshrc
 if [[ -e ~/.config/nvim.old ]] then
     rm -r ~/.config/nvim.old
 fi
-cp -r ~/.config/nvim ~/.config/nvim.old
-rm -r ~/.config/nvim
+if [[ -e ~/.config/nvim ]] then
+    cp -r ~/.config/nvim ~/.config/nvim.old
+    rm -r ~/.config/nvim
+    print "WARNING: The old ~/.config/nvim has been copied to ~/.config/nvim.old, and this backup will be deleted on the next run of this script."
+fi
 cp -r $dir/nvim ~/.config
-print "WARNING: The old ~/.config/nvim has been copied to ~/.config/nvim.old, and this backup will be deleted on the next run of this script."
 
 cp $dir/toprc ~/.config/procps/toprc
 cp $dir/.gef.rc ~/.gef.rc

@@ -16,14 +16,14 @@ vim.keymap.set("n", "<leader>n", function()
     vim.cmd("nohlsearch")
 end)
 
--- LaTeX compile
+-- XeLaTeX compile
 vim.keymap.set("n", "<leader>lc", function()
     if vim.bo.filetype ~= "tex" then
         print("Not in a TeX file!")
         return
     end
     vim.cmd("w")
-    vim.cmd("!pdflatex %")
+    vim.cmd("!xelatex %")
 end)
 
 -- Faster exit from terminal mode

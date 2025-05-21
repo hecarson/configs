@@ -4,12 +4,17 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 vim.opt.ignorecase = true
+vim.opt.smartcase = true
 vim.opt.signcolumn = "yes"
+vim.opt.splitbelow = true
+vim.opt.splitright = true
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.lsp.log.set_level("OFF")
+
+vim.diagnostic.config({ virtual_text = true })
 
 function apply_colorscheme()
     vim.cmd("colorscheme kanagawa")

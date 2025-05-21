@@ -11,10 +11,14 @@ vim.keymap.set({"n", "v"}, "<leader>P", [["+P]])
 -- Disable ctrl + left mouse
 vim.keymap.set("n", "<C-LeftMouse>", function() end)
 
--- no highlight search
+-- No highlight search
 vim.keymap.set("n", "<leader>n", function()
     vim.cmd("nohlsearch")
 end)
+
+-- Diagnostics
+vim.keymap.set("n", "<leader>dq", vim.diagnostic.setloclist) -- Diagnostics quickfix list
+vim.keymap.set("n", "<leader>do", function() vim.diagnostic.open_float() end)
 
 -- XeLaTeX compile
 vim.keymap.set("n", "<leader>lc", function()
@@ -48,14 +52,28 @@ vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, {}) -- find symb
 vim.keymap.set("n", "<leader>fw", builtin.lsp_workspace_symbols, {}) -- find symbols
 vim.keymap.set("n", "<leader>ft", builtin.treesitter, {}) -- find treesitter
 
+-- b for deBug
 local dap = require("dap")
 vim.keymap.set("n", "<F5>", function() dap.continue() end)
 vim.keymap.set("n", "<F10>", function() dap.step_over() end)
 vim.keymap.set("n", "<F11>", function() dap.step_into() end)
 vim.keymap.set("n", "<F23>", function() dap.step_out() end) -- shift + f11, inserted with CTRL-K
-vim.keymap.set("n", "<leader>dr", function() dap.repl.open() end) -- debug REPL
-vim.keymap.set("n", "<leader>dq", function() dap.terminate() end) -- debug quit
-vim.keymap.set("n", "<leader>db", function() dap.toggle_breakpoint() end) -- debug breakpoint
+vim.keymap.set("n", "<leader>br", function() dap.repl.open() end) -- debug REPL
+vim.keymap.set("n", "<leader>bq", function() dap.terminate() end) -- debug quit
+vim.keymap.set("n", "<leader>bb", function() dap.toggle_breakpoint() end) -- debug breakpoint
 
 local dapui = require("dapui")
-vim.keymap.set("n", "<leader>dt", dapui.toggle) -- debug toggle
+vim.keymap.set("n", "<leader>bt", dapui.toggle) -- debug toggle
+
+
+
+-- LSP keymaps
+vim.api.nvim_create_autocmd("LspAttach", {
+    desc = "LSP actions",
+    callback = function(event)
+        local opts = {buffer = event.buf}
+
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+        vim.keymap.set("n", "<C-s>", vim.lsp.buf.signature_help, opts)
+    end,
+})

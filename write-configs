@@ -9,7 +9,7 @@ fi
 if [[ -e ~/.config/nvim ]] then
     cp -r ~/.config/nvim ~/.config/nvim.old
     rm -r ~/.config/nvim
-    print "WARNING: The old ~/.config/nvim has been copied to ~/.config/nvim.old, and this backup will be deleted on the next run of this script."
+    echo "WARNING: The old ~/.config/nvim has been copied to ~/.config/nvim.old, and this backup will be deleted on the next run of this script."
 fi
 cp -r $dir/nvim ~/.config
 

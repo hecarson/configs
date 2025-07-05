@@ -35,6 +35,7 @@ function enablept {
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias less='less -M'
 alias mainenv='. ~/main-env/bin/activate'
 alias deact='deactivate'
 alias pkgsizes="pacman -Qi | grep -E '^(Name|Installed)' | awk '{gsub(/^Installed.*: /, \"\"); gsub(/Name.*: /, \"\");} {if (NR%2==1) printf \"%s \", \$0; else {gsub(\" \", \"\"); printf \"%s\n\", \$0;}}' | sort -h -k 2"

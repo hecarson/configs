@@ -3,21 +3,16 @@ require('mason-lspconfig').setup({
     ensure_installed = {},
 })
 
-local cmp = require("cmp")
-cmp.setup({
-    snippet = {
-        expand = function(args)
-            vim.snippet.expand(args.body)
-        end,
-    },
-    mapping = cmp.mapping.preset.insert({
-    }),
-    sources = {
-        { name = "nvim_lsp" },
-        { name = "nvim_lsp_signature_help" },
-    },
+-- Enable signature hint for jdtls
+vim.lsp.config("jdtls", {
+    settings = { java = { signatureHelp = { enabled = true } } },
 })
 
---require("lsp_signature").setup({
---    hint_enable = false,
---})
+-- https://cmp.saghen.dev/installation
+require("blink.cmp").setup({
+    keymap = { preset = "default" },
+    sources = {
+        defaults = {"lsp", "path", "snippets", "buffer"},
+    },
+    signature = { enabled = true, window = { show_documentation = true } },
+})

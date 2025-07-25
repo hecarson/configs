@@ -8,9 +8,9 @@ require("dap-python").setup("python")
 
 
 -- Adapters
+local dap = require("dap")
 
 -- https://codeberg.org/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation#c-c-rust-via-gdb
-local dap = require("dap")
 dap.adapters.gdb = {
     type = "executable",
     command = "gdb",

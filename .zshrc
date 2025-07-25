@@ -35,7 +35,7 @@ function enablept {
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias less='less -M'
+alias less='less -Mi'
 alias mainenv='. ~/main-env/bin/activate'
 alias deact='deactivate'
 alias pkgsizes="pacman -Qi | grep -E '^(Name|Installed)' | awk '{gsub(/^Installed.*: /, \"\"); gsub(/Name.*: /, \"\");} {if (NR%2==1) printf \"%s \", \$0; else {gsub(\" \", \"\"); printf \"%s\n\", \$0;}}' | sort -h -k 2"
@@ -50,3 +50,9 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+if [[ -d "$HOME/.pyenv" ]]; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init - zsh)"
+fi

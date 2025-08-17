@@ -42,6 +42,7 @@ alias pkgsizes="pacman -Qi | grep -E '^(Name|Installed)' | awk '{gsub(/^Installe
 alias genmirrorlist="reflector -c us -p https -l 10 -f 5 --verbose --save mirrorlist"
 alias pacdiffs="find /etc -name \"*.pacnew\" -o -name \".pacsave\" 2>& /dev/null"
 alias lsfs="lsblk -o name,label,fstype,fsused,fsavail,fssize,uuid,mountpoint"
+alias uvpn="sudo gpclient --fix-openssl connect --as-gateway vpn.utah.edu"
 
 # pnpm
 export PNPM_HOME="/home/carson/.local/share/pnpm"

@@ -1,8 +1,7 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter
--- https://github.com/nvim-treesitter/nvim-treesitter/wiki/Installation
 
 function is_large_buf(buf)
-    local max_filesize = 100 * 1024 -- 100 KB
+    local max_filesize = 1 * 1024 * 1024 -- 1 MB
     local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
     if ok and stats and stats.size > max_filesize then
         return true
@@ -11,8 +10,9 @@ end
 
 return {
     "nvim-treesitter/nvim-treesitter",
+    branch = "master",
     build = ":TSUpdate",
-
+    lazy = false,
     config = function()
         require("nvim-treesitter.configs").setup({
             ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "asm", "cpp", "latex", "python" },
@@ -32,5 +32,5 @@ return {
                 enable = true,
             },
         })
-    end,
+    end
 }

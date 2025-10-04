@@ -1,9 +1,6 @@
-
-
 require("dapui").setup()
-apply_colorscheme()
-
 require("dap-python").setup("python")
+--apply_colorscheme()
 
 
 
@@ -33,8 +30,7 @@ local c_cpp_config = {
         end,
         args = function()
             local args_str = vim.fn.input("Args: ")
-            local utils = require("dap.utils")
-            return utils.splitstr(args_str)
+            return vim.split(args_str, " ")
         end,
         cwd = "${workspaceFolder}",
         stopAtBeginningOfMainSubprogram = false,

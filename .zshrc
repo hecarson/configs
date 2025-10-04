@@ -27,6 +27,7 @@ PS1="%{%F{green}%}%D{%H:%M:%S} %{%B%F{red}%}%n@%m%{%b%F{white}%}:%{%F{yellow}%}%
 PS2="> "
 
 export EDITOR=nvim
+export PATH=$PATH:$HOME/pkgs/jdt-language-server/bin
 
 # Enable ptrace, useful for attaching with GDB
 function enablept {

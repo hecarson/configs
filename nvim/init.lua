@@ -22,6 +22,7 @@ end
 
 require("lazy-config")
 
+require("treesitter-config")
 require("lsp-config")
 require("dap-config")
 require("keymaps")
@@ -30,7 +31,7 @@ apply_colorscheme()
 
 
 
--- Disable TS autoindent for TeX files
+-- Disable autoindent for TeX files
 vim.api.nvim_create_autocmd(
     "FileType",
     {

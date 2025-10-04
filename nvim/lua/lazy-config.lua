@@ -26,13 +26,30 @@ vim.opt.rtp:prepend(lazypath)
 -- Setup lazy.nvim
 require("lazy").setup({
     spec = {
-        -- import your plugins
-        { import = "plugins" },
+        { "rebelot/kanagawa.nvim" },
+
+        { "nvim-treesitter/nvim-treesitter",
+            branch = "master", build = ":TSUpdate", lazy = false },
+
+        { "nvim-telescope/telescope.nvim",
+            branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+
+        { "stevearc/oil.nvim" },
+
+        -- LSP
+        { "neovim/nvim-lspconfig" },
+        { "Saghen/blink.cmp", version = "1.*" },
+
+        -- DAP
+        { "williamboman/mason.nvim" },
+        { "mfussenegger/nvim-dap" },
+        { "rcarriga/nvim-dap-ui" },
+        { "nvim-neotest/nvim-nio" },
+        { "mfussenegger/nvim-dap-python" },
     },
     -- Configure any other settings here. See the documentation for more details.
     -- colorscheme that will be used when installing plugins.
     install = { colorscheme = { "kanagawa" } },
     -- automatically check for plugin updates
-    --checker = { enabled = true },
-    rocks = { enabled = false },
+    checker = { enabled = false },
 })

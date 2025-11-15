@@ -48,7 +48,7 @@ vim.keymap.set("t", "<A-[>", "<C-\\><C-N>")
 local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff",
     function()
-        builtin.find_files({hidden = true, no_ignore_parent = true})
+        builtin.find_files({ hidden = true, no_ignore = true, no_ignore_parent = true })
     end,
     {}
 )

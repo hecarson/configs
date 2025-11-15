@@ -7,7 +7,7 @@ vim.lsp.config("jdtls", {
 require("blink.cmp").setup({
     keymap = { preset = "default" },
     sources = {
-        defaults = {"lsp", "path", "snippets", "buffer"},
+        default = {"lsp", "path", "snippets", "buffer"},
     },
     signature = { enabled = true, window = { show_documentation = true } },
 })

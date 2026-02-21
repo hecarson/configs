@@ -41,7 +41,6 @@ require("lazy").setup({
         { "Saghen/blink.cmp", version = "1.*" },
 
         -- DAP
-        { "williamboman/mason.nvim" },
         { "mfussenegger/nvim-dap" },
         { "rcarriga/nvim-dap-ui" },
         { "nvim-neotest/nvim-nio" },

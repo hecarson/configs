@@ -1,8 +1,5 @@
 require("dapui").setup()
 require("dap-python").setup("python")
---apply_colorscheme()
-
-
 
 -- Adapters
 local dap = require("dap")

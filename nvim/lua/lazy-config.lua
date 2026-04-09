@@ -28,11 +28,15 @@ require("lazy").setup({
     spec = {
         { "rebelot/kanagawa.nvim" },
 
-        { "nvim-treesitter/nvim-treesitter",
-            branch = "master", build = ":TSUpdate", lazy = false },
+        {
+            "nvim-treesitter/nvim-treesitter",
+            build = ":TSUpdate", lazy = false
+        },
 
-        { "nvim-telescope/telescope.nvim",
-            branch = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+        {
+            "nvim-telescope/telescope.nvim",
+            version = "*", dependencies = { 'nvim-lua/plenary.nvim' }
+        },
 
         { "stevearc/oil.nvim" },
 
